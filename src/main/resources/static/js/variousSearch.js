@@ -20,6 +20,9 @@ if(type !== ''){
 function fncGetList(currentPage) {
 	console.log(`fncGetList실행`);
 
+	const urlParams = new URLSearchParams(window.location.search);
+	const imageParam = urlParams.get('image');
+
 	$("#currentPage").val(currentPage)
 	//언제나 인풋을 보내고 언제나 처리하는 전략 : 서버가 언제나 처리하도록 로직을 짬. 얘는 서버로부터 받았던걸 모두 다시 보냄.
 	//인풋이 있으면 보내고 없으면 안보내는 전략 : 서버가 인풋이 있으면 처리하고, 인풋이 없을때는 원래 있던걸 쓰도록 로직을 짬.
@@ -84,7 +87,10 @@ function fncGetList(currentPage) {
 	}
 
 	//액션에게 잘 줬나? 액션은 받았나? 확인하기, 액션이 잘 줬나? 확인하기
-	const url = "/product/listProduct?menu="+menu;
+	let url = "/product/listProduct?menu="+menu;
+	if (imageParam) {
+		url += "&image=" + imageParam;
+	}
 	console.log(url);
 	$("form").attr("method" , "POST").attr("action" , url).submit();
 }

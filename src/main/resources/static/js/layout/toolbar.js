@@ -27,21 +27,21 @@ function histories() {
 		$( "a:contains('판매상품등록')" ).on("click" , function() {
 			//Debug..
 			console.log("얍얍얍");
-			$(self.location).attr("href","../product/addProductView.jsp;");
+			$(self.location).attr("href","../product/addProductView.jsp");
 		});
 		//판매상품관리
 		$( "a:contains('판매상품관리')" ).on("click" , function() {
 			//Debug..
-			self.location = "/product/listProduct?menu=manage";
+			self.location = "/product/listProduct?menu=manage&image=ok";
 		});
 		//상품검색
 		$( "a:contains('상 품 검 색')" ).on("click" , function() {
 			//Debug..
-			self.location = "/product/listProduct?menu=search";
+			self.location = "/product/listProduct?menu=search&image=ok";
 		});
-		$( "a:contains('상 품 검 색(회원 뷰 확인)')" ).on("click" , function() {
+		$( "a:contains('상 품 검 색(회원 뷰 확인하기 위함)')" ).on("click" , function() {
 			//Debug..
-			self.location = "/product/listProduct?menu=search";
+			self.location = "/product/listProduct?menu=search&image=ok";
 		});
 
 

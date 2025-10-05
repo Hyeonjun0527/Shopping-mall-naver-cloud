@@ -306,8 +306,20 @@
         });
 
         $(document).on('click', 'button[data-toTable]', function () {
-            window.location.href = "/product/listProduct?menu=${menu}";
+            window.location.href = "/product/listProduct?menu=${menu}&image=no";
         });
+        
+        // 이 페이지 전용 fncGetList 오버라이드
+        function fncGetList(currentPage) {
+            console.log(`listProductImage.jsp의 fncGetList실행`);
+
+            $("#currentPage").val(currentPage)
+            
+            // 이미지 뷰이므로 항상 image=ok를 유지하도록 URL을 구성합니다.
+            const url = "/product/listProduct?menu=${param.menu}&image=ok";
+            console.log("form action url : " + url);
+            $("form").attr("method" , "POST").attr("action" , url).submit();
+        }
 
 
         $('input[name="searchKeyword"]').autocomplete({

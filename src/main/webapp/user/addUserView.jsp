@@ -35,9 +35,11 @@
 
 <!-- ToolBar Start /////////////////////////////////////-->
 <div class="navbar  navbar-default">
-	<div class="container">
-		<a class="navbar-brand" href="/index.jsp">Model2 MVC Shop</a>
-	</div>
+
+  <div class="container">
+    <a class="navbar-brand" href="/index.jsp">학습용 상품 서비스</a>
+  </div>
+
 </div>
 <!-- ToolBar End /////////////////////////////////////-->
 

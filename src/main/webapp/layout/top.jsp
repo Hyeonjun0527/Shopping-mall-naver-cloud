@@ -3,7 +3,12 @@
 
 <html>
 <head>
-    <title>Model2 MVC Shop</title>
+    <meta charset="UTF-8">
+
+    <title>학습용 상품 서비스</title>
+
+    <!-- 참조 : http://getbootstrap.com/css/   참조 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="${pageContext.request.contextPath}/css/layout/top.css" rel="stylesheet" type="text/css">
 

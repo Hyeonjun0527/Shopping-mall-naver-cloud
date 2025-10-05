@@ -44,7 +44,7 @@
 
   <div class="container">
 
-    <a class="navbar-brand" href="#">Model2 MVC Shop</a>
+    <a class="navbar-brand" href="#">학습용 상품 서비스</a>
 
     <!-- toolBar Button Start //////////////////////// -->
     <div class="navbar-header">
@@ -130,9 +130,15 @@
     <!--  Main start /////////////////////////////////////-->
     <div class="col-md-9">
       <div class="jumbotron">
-        <h1>Model2 MVC Shop</h1>
+        <h1>학습용 상품 서비스</h1>
+        <p style="color: red;"><strong>이 프로젝트에 절대로 개인정보를 입력하지 마세요 프로젝트용 서비스입니다</strong></p>
+        <p style="color: red;"><strong>아이디,비밀번호,이름,주민번호, 주소,휴대폰번호, 이메일을 실제로 입력하지마세요.</strong></p>
+        <hr>
+        <p><b>테스트용 아이디</b></p>
+        <p>관리자 아이디: admin / 비밀번호: 1234</p>
+        <p>유저 아이디: user01 / 비밀번호: 1111</p>
+        <br>
         <p>로그인 후 사용가능...</p>
-        <p>로그인 전 검색만 가능합니다.</p>
         <p>회원가입 하세요.</p>
 
         <div class="text-center">

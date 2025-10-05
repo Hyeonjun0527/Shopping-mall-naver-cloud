@@ -118,9 +118,9 @@ function makeThumbnail(JsonData) {
 * {"search" : {"currentPage":1,"searchCondition":null,"searchKeyword":null,"searchType":null,"searchBoundFirst":0,"searchBoundEnd":0,"pageSize":3,"endRowNum":3,"startRowNum":1},
 * "navigation":"forward:/product/getProduct.jsp",
 * "resultPage":{"currentPage":1,"totalCount":27,"pageUnit":5,"pageSize":3,"maxPage":9,"beginUnitPage":1,"endUnitPage":5},
-* "totalCount":27,"menu":null,"products":[{"fileName":"출석큐알.jpg","manuDate":"20120514","price":2000000,"prodDetail":"소니 바이오 노트북 신동품","prodName":"vaio vgn FS70B","prodNo":10000,"regDate":1710255600000,"proTranCode":"b  "}
-* ,{"fileName":"다운로드.jpg,출석큐알.jpg","manuDate":"20120514","price":10000,"prodDetail":"자전거 좋아요~","prodName":"자전거","prodNo":10001,"regDate":1710774000000,"proTranCode":"a"}
-* ,{"fileName":null,"manuDate":"20120201","price":1170000,"prodDetail":"최고 디자인 신품","prodName":"보르도","prodNo":10002,"regDate":1710946800000,"proTranCode":"a"}]}
+* "totalCount":27,"menu":null,"products":[{"fileName":"출석큐알.jpg","manuDate":"20240514","price":2000000,"prodDetail":"소니 바이오 노트북 신동품","prodName":"vaio vgn FS70B","prodNo":10000,"regDate":1710255600000,"proTranCode":"b  "}
+* ,{"fileName":"다운로드.jpg,출석큐알.jpg","manuDate":"20240514","price":10000,"prodDetail":"자전거 좋아요~","prodName":"자전거","prodNo":10001,"regDate":1710774000000,"proTranCode":"a"}
+* ,{"fileName":null,"manuDate":"20240201","price":1170000,"prodDetail":"최고 디자인 신품","prodName":"보르도","prodNo":10002,"regDate":1710946800000,"proTranCode":"a"}]}
 *
 * JsonData.products[0].fileName
 * */
@@ -134,7 +134,7 @@ function makeThumbnail(JsonData) {
 //프로덕트는 객체
 //JsonData는 제이슨객체, products는 배열, product는 제이슨객체
 //{"fileName":"다운로드.jpg,출석큐알.jpg",
-// "manuDate":"20120514",
+// "manuDate":"20240514",
 // "price":2000000,
 //
 // "prodDetail":"소니 바이오 노트북 신동품",

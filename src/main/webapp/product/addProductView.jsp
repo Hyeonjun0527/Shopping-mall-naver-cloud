@@ -149,7 +149,7 @@
 			console.log("클릭감지 cancel");
 		});
 		$('.back').on('click', function () {
-			history(-1);
+			history.back();
 			console.log("클릭감지 back");
 		});
 	});//end of ready

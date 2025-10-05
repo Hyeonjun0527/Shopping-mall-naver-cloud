@@ -23,10 +23,7 @@
 
 
 	<!-- Bootstrap Dropdown Hover CSS -->
-	<link href="/css/animate.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
 	<!-- Bootstrap Dropdown Hover JS -->
-	<script src="/js/bootstrap-dropdownhover.min.js"></script>
 
 
 	<!-- jQuery UI toolTip 사용 CSS-->
@@ -209,7 +206,9 @@
 
 
 <!-- PageNavigation Start... -->
-<jsp:include page="../common/pageNavigator_new.jsp"/>
+<jsp:include page="../common/pageNavigator_new.jsp">
+    <jsp:param name="pageFn" value="fncGetUserList"/>
+</jsp:include>
 <!-- PageNavigation End... -->
 
 </body>

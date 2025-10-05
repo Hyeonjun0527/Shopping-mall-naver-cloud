@@ -309,18 +309,14 @@ public class ProductController {
         //네비게이션
         if (menu != null) {
             System.out.println("forward:/product/listProduct.jsp" + "합니다.");
-            if(image!=null) {
-                if (image.equals("ok")) {
-                    return "forward:/product/listProductImage.jsp";
-                }
+            if(image == null || !image.equals("no")) {
+                return "forward:/product/listProductImage.jsp";
             }
             return "forward:/product/listProduct.jsp";
         } else {
             System.out.println("forward:/product/getProduct.jsp" + "합니다.");
-            if(image!=null) {
-                if (image.equals("ok")) {
-                    return "forward:/product/listProductImage.jsp";
-                }
+            if(image == null || !image.equals("no")) {
+                return "forward:/product/listProductImage.jsp";
             }
             return "forward:/product/getProduct.jsp";
         }//end of else

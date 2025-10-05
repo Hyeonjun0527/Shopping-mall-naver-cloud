@@ -35,9 +35,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%-- 부트스트랩 Dropdown Hover CSS JS--%>
-    <link href="/css/animate.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
-    <script src="/js/bootstrap-dropdownhover.min.js"></script>
     <script
             src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
             integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY="
@@ -61,7 +58,7 @@
     <jsp:include page="/layout/toolbar.jsp"/>
     <div class="container">
         <div class="page-header text-info">
-            <h3>${param.menu=='manage' ? '판매 목록조회' :'구매 목록조회'}</h3>
+            <h3>${param.menu=='manage' ? '판매 이력조회' :'구매 목록조회'}</h3>
         </div>
 
         <div class="row">
@@ -176,8 +173,9 @@
                 <tr>
                     <td align="center"><input type="hidden" id="currentPage"
                                               name="currentPage" value="1"/>
-                        <jsp:include
-                                page="../common/pageNavigator_new.jsp"/>
+                        <jsp:include page="../common/pageNavigator_new.jsp">
+                            <jsp:param name="pageFn" value="fncGetPurchaseList"/>
+                        </jsp:include>
                     </td>
 
                 </tr>
@@ -189,7 +187,7 @@
 </form>
 
 <script type="text/javascript">
-    function fncGetList(currentPage) {
+    function fncGetPurchaseList(currentPage) {
         if (currentPage === undefined) {
             currentPage = 1;
         }
@@ -199,7 +197,7 @@
             .attr("method", "post")
             .attr("action", "/purchase/listPurchase?menu=${param.menu}")
             .submit();
-    }//end of fncGetList
+    }//end of fncGetPurchaseList
 
     $(document).ready(function () {
 

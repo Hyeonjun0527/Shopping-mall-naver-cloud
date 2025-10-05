@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%-- 부트스트랩 Dropdown Hover CSS JS--%>
-    <link href="/css/animate.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
-    <script src="/js/bootstrap-dropdownhover.min.js"></script>
     <script
             src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
             integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY="
@@ -63,7 +60,7 @@
 </script>
 <div class="container">
     <div class="page-header text-info">
-        <h3>${menu=='manage' ? '상품관리' :'상품목록조회'}</h3>
+        <h3>${menu=='manage' ? '판매상품관리' :'상품목록조회'}</h3>
     </div>
 
     <div class="row">
@@ -223,6 +220,18 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/variousSearch.js"></script>
 <script>
+    // variousSearch.js의 fncGetList를 오버라이드(재정의)합니다.
+    function fncGetList(currentPage) {
+        console.log(`listProduct.jsp의 fncGetList실행`);
+
+        $("#currentPage").val(currentPage)
+        
+        // 테이블 뷰이므로 항상 image=no를 유지하도록 URL을 구성합니다.
+        const url = "/product/listProduct?menu="+menu+"&image=no";
+        console.log("form action url : " + url);
+        $("form").attr("method" , "POST").attr("action" , url).submit();
+    }
+
     $(document).ready(function () {
         $('button.btn[data-search]:contains("검색")').click(function () {
             console.log('실행됫나보자.')
@@ -249,7 +258,7 @@
         $('button[data-toImage]').click(function () {
             window.location.href = "/product/listProduct?menu=${menu}&image=ok";
         })
-
+        
         $('input[name="searchKeyword"]').autocomplete({
             source: function (request, response) {
 

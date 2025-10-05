@@ -1,0 +1,56 @@
+
+services:
+  # Oracle DB 서비스 정의
+  oracle-db:
+    image: gvenzl/oracle-xe
+    container_name: oracle-xe
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PASSWORD=oracle123
+    volumes:
+      - ./SQL(Script)/initialize_for_docker.sql:/container-entrypoint-initdb.d/initialize.sql
+    networks:
+      - my-shop-net
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # Spring Boot App 서비스 정의
+  myshop-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myshop12-app
+    container_name: myshop12-myshop-app-1
+    depends_on:
+      oracle-db:
+        condition: service_healthy
+    environment:
+      - DAUM_API_KEY=${DAUM_API_KEY}
+      - KAKAO_API_KEY=${KAKAO_API_KEY}
+    networks:
+      - my-shop-net
+
+  # Nginx 서비스 정의
+  nginx:
+    image: nginx:latest
+    container_name: my-nginx
+    ports:
+      - "80:80" # 로컬 테스트(http://localhost)를 위한 포트
+      - "9410:443" # 외부의 9410번 포트를 Nginx 컨테이너의 443(HTTPS) 포트로 연결
+    volumes:
+      # 설정 파일과 인증서 파일들을 컨테이너 안으로 복사합니다.
+      - ./nginx-config/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx-config/cert.pem:/etc/nginx/ssl/cert.pem
+      - ./nginx-config/key.pem:/etc/nginx/ssl/key.pem
+    depends_on:
+      - myshop-app # myshop-app이 먼저 실행된 후에 실행됩니다.
+    networks:
+      - my-shop-net
+
+# 컨테이너들이 사용할 네트워크 정의
+networks:
+  my-shop-net:

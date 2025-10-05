@@ -4,6 +4,7 @@
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<c:set var="pageFunction" value="${not empty param.pageFn ? param.pageFn : 'fncGetList'}" />
  
 <div class="container text-center">
 		 <nav>
@@ -16,7 +17,7 @@
 			<c:if test="${ resultPage.currentPage > resultPage.pageUnit }">
 				<li>
 			</c:if>
-		      <a href="javascript:fncGetList('${resultPage.beginUnitPage-1}')" aria-label="Previous">
+		      <a href="javascript:${pageFunction}('${resultPage.beginUnitPage-1}')" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		      </a>
 		    </li>
@@ -27,13 +28,13 @@
 				<c:if test="${ resultPage.currentPage == i }">
 					<!--  현재 page 가르킬경우 : active -->
 				    <li class="active">
-				    	<a href="javascript:fncGetList('${ i }');">${ i }<span class="sr-only">(current)</span></a>
+				    	<a href="javascript:${pageFunction}('${ i }');">${ i }<span class="sr-only">(current)</span></a>
 				    </li>
 				</c:if>	
 				
 				<c:if test="${ resultPage.currentPage != i}">	
 					<li>
-						<a href="javascript:fncGetList('${ i }');">${ i }</a>
+						<a href="javascript:${pageFunction}('${ i }');">${ i }</a>
 					</li>
 				</c:if>
 			</c:forEach>
@@ -45,7 +46,7 @@
 			<c:if test="${ resultPage.endUnitPage < resultPage.maxPage }">
 				<li>
 			</c:if>
-		      <a href="javascript:fncGetList('${resultPage.endUnitPage+1}')" aria-label="Next">
+		      <a href="javascript:${pageFunction}('${resultPage.endUnitPage+1}')" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		      </a>
 		    </li>

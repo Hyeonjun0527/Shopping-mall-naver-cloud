@@ -43,14 +43,15 @@
 	<jsp:include page="/layout/toolbar.jsp" />
    	<!-- ToolBar End /////////////////////////////////////-->
 
-	<!--  아래의 내용은 http://getbootstrap.com/getting-started/  참조 -->	
-   	<div class="container ">
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Model2MVCShop </h1>
-     </div>
-    </div>
+	<!--  화면구성 div Start /////////////////////////////////////-->
+	<div class="container">
 
+	  <div class="jumbotron">
+	    <h1>학습용 상품 서비스 </h1>
+	    <p>회원정보는 왼쪽상단 네비게이션바의 '내 정보' 또는 '회원관리'에서 확인 할 수 있습니다.</p>
+	  </div>
+
+	</div>
 	<!-- 참조 : http://getbootstrap.com/css/   : container part..... -->
 	<div class="container">
   	 </div>

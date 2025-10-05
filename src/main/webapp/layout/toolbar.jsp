@@ -11,7 +11,7 @@
 	<div class="container">
 
 <%--		navbar-brand는 축소되도 보인다.--%>
-		<a class="navbar-brand" href="/index.jsp">Model2 MVC Shop</a>
+		<a class="navbar-brand" href="/index.jsp">학습용 상품 서비스</a>
 
 <%--		navbar-toggle은 축소될때만 보이고, 오른쪽	에 토글버튼 생성함--%>
 		<!-- toolBar Button Start //////////////////////// -->
@@ -27,8 +27,8 @@
 <%--		navbar-collapse는 사용하는 요소들임. --%>
 	<%--fadeInDown fadeInRight fadeInUp fadeInLeft 부트스트랩 드롭다운호버라는 api 구글링--%>
 	    <!--  dropdown hover Start -->
-		<div 	class="collapse navbar-collapse" id="target" 
-	       			data-hover="dropdown" data-animations="fadeInUp">
+		<div 	class="collapse navbar-collapse" id="target"
+	       			data-hover="dropdown">
 	         
 	         	<!-- Tool Bar 를 다양하게 사용하면.... -->
 	             <ul class="nav navbar-nav">
@@ -85,7 +85,7 @@
 							 </c:if>
 							 <c:if test="${sessionScope.user.role == 'admin'}">
 								 <li><a href="#">판매이력조회</a></li>
-								 <li><a href="#">상 품 검 색(회원 뷰 확인)</a></li>
+								 <li><a href="#">상 품 검 색(회원 뷰 확인하기 위함)</a></li>
 							 </c:if>
 	                         
 	                         <li><a href="#">최근 본 상품</a></li>
